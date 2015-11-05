@@ -27,7 +27,7 @@ function [bestM_pass2,score_sorted] = parses_to_MPs(I,PP,ninit,lib,verbose)
     % Transform sub-parsed random walks into motor programs
     fclassify = @(traj,scale) classify_traj_as_subid(traj,scale,lib);
     MP = cell(nwalk,1);
-    if verbose, fprintf(1,'Converting to MotorPrograms...'); end
+    if verbose, fprintf(1,'\nconverting to MotorPrograms...'); end
     parfor i=1:nwalk    
        MP{i} = sequence_to_MP(S_walks{i},I,fclassify,lib);       
     end
@@ -42,9 +42,14 @@ function [bestM_pass2,score_sorted] = parses_to_MPs(I,PP,ninit,lib,verbose)
     
     % Optimize the order of the strokes for each parse
     Norder = numel(bestM_pass1);
-    if verbose, fprintf(1,'optimizing stroke order (for %d parses)\n',Norder); end  
-    parfor i=1:Norder
-        if verbose, fprintf(1,'%d,\n',i); end
+    if verbose, fprintf(1,'\noptimizing stroke order (for %d parses)\n',Norder); end  
+    for i=1:Norder
+        if verbose
+            fprintf(1,'%d,',i);
+            if mod(i,5)==0
+                fprintf(1,'\n');
+            end
+        end
         optimize_order_MP(bestM_pass1{i},lib);
     end
     if verbose, fprintf(1,'done.\n'); end

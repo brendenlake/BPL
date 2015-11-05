@@ -30,7 +30,7 @@ function [bestMP,score_sorted] = generate_random_parses(I,lib,ninit,verbose)
     
     % Create a set of random parses through random walks
     ps = defaultps_bottomup;
-    if verbose, fprintf(1,'generating random walks...'); end
+    if verbose, fprintf(1,'\ngenerating random walks...\n'); end
     RW = RandomWalker(G);
     PP = ProcessParses(I,lib,verbose);
     

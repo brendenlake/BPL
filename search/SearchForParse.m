@@ -4,7 +4,7 @@ function M = SearchForParse(M,lib,verbose,fast_mode)
     % Input
     %  M : MotorProgram
     %  verbose: display steps as we go?
-    %  fast_mode: (true/false) no gradient search and split/merge search
+    %  fast_mode: (true/false) no gradient search (by far the slowest part)
 
     if ~exist('verbose','var')
        verbose = false;

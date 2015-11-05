@@ -83,6 +83,8 @@ function samples = mcmc_all(Q,lib,nsamp,varargin)
                 
     end
     
-    MH.acceptance_ratios();
+    if verbose
+        MH.acceptance_ratios();
+    end
 
 end

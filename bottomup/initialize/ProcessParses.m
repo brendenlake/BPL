@@ -107,14 +107,18 @@ classdef ProcessParses < BetterHandle
             mylist = this.list_stks;
             libb = this.lib;
             verbb = this.verbose;
-            if this.verbose, fprintf(1,'sub-parsing %d strokes...\n',nl); end
-            %parfor i=1:nl 
+            if this.verbose, fprintf(1,'\nsub-parsing %d strokes in to sub-strokes...\n',nl); end
             for i=1:nl
                traj = mylist{i};
                traj = space_img_to_motor(traj);
                SSS = SearchSubStk(traj,libb);
                mylist{i} = SSS.run;
-               if verbb, fprintf(1,'%d\n',i); end
+               if verbb && mod(i,5)==0
+                   fprintf(1,'%d,',i);
+                   if mod(i,20)==0
+                       fprintf(1,'\n');
+                   end
+               end
             end          
             this.list_stks = mylist;
             if this.verbose, fprintf(1,'done.\n'); end
