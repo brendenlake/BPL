@@ -1,6 +1,6 @@
 # BPL model for one-shot learning
 
-Bayesian Program Learning (BPL): Matlab source code for one-shot learning of handwritten characters.
+Matlab source code for one-shot learning of handwritten characters with Bayesian Program Learning (BPL).
 
 ### Citing this code
 Please cite the following paper:
@@ -40,16 +40,38 @@ omniglot_preprocess;
 This will create the 'data_background_processed.mat' and the 'data_evaluation_processed.mat' files for accessing the Omniglot dataset with pre-processed stroke data.
 
 **Parsing demo**   
-To run the parsing demo, type 
+To run the model fitting demo, type 
 
 ```matlab
-test_parser;
+demo_fit;
 ```
+
+**One-shot classification**   
+First, download the pre-computed models and unzip such that 'model_fits' and 'model_refits' are sub-directories of the 'classification' directory.   
+http://cims.nyu.edu/~brenden/supplemental/BPL_precomputed/model_fits.zip   
+http://cims.nyu.edu/~brenden/supplemental/BPL_precomputed/model_refits.zip
+
+To run the model re-fitting demo, enter the 'classification' directory and type:
+
+```matlab
+demo_refit;
+```
+
+To measure classification error rate with the pre-computed results, type:
+
+```matlab
+run_classification;
+```
+
+**One-shot exemplar generation**
+
+Coming soon.
 
 ### Computing resources
 
 Most experiments will require a multi-CPU cluster to run in a reasonable amount of time. Fitting motor programs to images of characters can be run in parallel.
 
+The parsing and one-shot classification demos include a 'fast_mode' option (on by default) which allows for the demo to run quickly, skipping the expensive procedure of fitting the strokes to the details of the image. Use this mode with caution, as this mode is much cruder and was not used in the paper results.
 
 ### Compatibility
 
