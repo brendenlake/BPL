@@ -74,6 +74,21 @@ classdef TestModelToVec < matlab.unittest.TestCase
             this.verifyTrue(isequal(M0.pimg,this.M.pimg));         
         end
         
+        function testAffine(this)
+            % tests model_to_vec_fit_affine for MotorProgram class 
+            lib = loadlib();
+            this.M.A = CPD.sample_affine(lib);
+            M0 = this.M.copy();
+            theta = model_to_vec_fit_affine(this.M);
+            
+            this.M.blur_sigma = 0;
+            this.M.epsilon = 0;
+            this.M.A = 0*this.M.A;
+           
+            vec_to_model_fit_affine(theta,this.M);           
+            this.verifyTrue(isequal(M0.pimg,this.M.pimg));         
+        end
+        
         function testTokenMfit(this)
             % tests model_to_vec_fit_token for MotorProgramFit class 
             lib = loadlib();

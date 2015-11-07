@@ -34,13 +34,10 @@ function [Mfit,score_fit] = FitNewExemplar(I,samples,lib,auto_affine,fit_affine_
     
     % do the optimization
     if fit_affine_only % AFFINE
-        error('affine functionality removed');
-        %argmax_fit_affine(Mfit,lib);
-        %score_fit = scoreMP_fit(Mfit,lib);
+        argmax_fit_affine(Mfit,lib);
+        score_fit = scoreMP_fit(Mfit,lib);
     else % REGULAR
-        score_fit = argmax_fit_token(Mfit,lib);
-        %ss = scoreMP_fit(Mfit,lib);
-        %assert(aeq(score_fit,ss));
+        score_fit = argmax_fit_token(Mfit,lib);        
     end
     
 end

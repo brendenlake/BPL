@@ -1,1 +1,4 @@
 data/data_*.mat
+classification/model_fits
+classification/model_refits
+classification/archive
