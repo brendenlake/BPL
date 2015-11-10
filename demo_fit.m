@@ -1,7 +1,7 @@
 % Demo of fitting a motor program to an image.
 
 % Parameters
-K = 3; % number of unique parses we want to collect
+K = 5; % number of unique parses we want to collect
 verbose = true; % describe progress and visualize parse?
 include_mcmc = false; % run mcmc to estimate local variability?
 fast_mode = true; % skip the slow step of fitting strokes to details of the ink?

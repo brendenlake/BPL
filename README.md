@@ -65,7 +65,13 @@ run_classification;
 
 **One-shot exemplar generation**
 
-Coming soon.
+First, enter the 'generate_exemplars' directory and unzip 'model_fits.zip' so 'model_fits' is now a sub-directory. These are the pre-computed models that were used in the exemplar generation visual Turing tests.
+
+To run the exemplar generation demo, from within the 'generate_exemplars' directory type:
+
+```matlab
+demo_generate_exemplar;
+```
 
 ### Computing resources
 
