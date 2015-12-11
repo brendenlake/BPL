@@ -6,7 +6,7 @@ Matlab source code for one-shot learning of handwritten characters with Bayesian
 Please cite the following paper:
 
 
-Lake, Brenden M., Salakhutdinov, Ruslan, and Tenenbaum, Joshua B. (in press). Human-level concept learning through probabilistic program induction. _Science_.
+[Lake, Brenden M., Salakhutdinov, Ruslan, and Tenenbaum, Joshua B. (in press). Human-level concept learning through probabilistic program induction. _Science_.](https://www.sciencemag.org/content/350/6266/1332.full)
 
 
 ### Pre-requisites 
