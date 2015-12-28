@@ -11,7 +11,7 @@ Please cite the following paper:
 ### Pre-requisites 
 
 **Matlab Toolboxes**   
-Optimization Toolbox
+Optimization Toolbox   
 Statistics Toolbox (before R2015a) OR Statistics and Machine Learning Toolbox   
 Image Processing Toolbox   
 Curve Fitting Toolbox
