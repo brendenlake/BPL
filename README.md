@@ -5,11 +5,15 @@ Matlab source code for one-shot learning of handwritten characters with Bayesian
 ### Citing this code
 Please cite the following paper:
 
-
-Lake, Brenden M., Salakhutdinov, Ruslan, and Tenenbaum, Joshua B. (in press). Human-level concept learning through probabilistic program induction. _Science_.
+[Lake, B. M., Salakhutdinov, R., and Tenenbaum, J. B. (2015). Human-level concept learning through probabilistic program induction.](http://www.sciencemag.org/content/350/6266/1332.short) _Science_, 350(6266), 1332-1338.
 
 
 ### Pre-requisites 
+
+**Matlab Toolboxes**   
+Statistics Toolbox (before R2015a) OR Statistics and Machine Learning Toolbox   
+Image Processing Toolbox   
+Curve Fitting Toolbox   
 
 **The Lightspeed Matlab toolbox**   
 (http://research.microsoft.com/en-us/um/people/minka/software/lightspeed/)   
@@ -21,17 +25,19 @@ Place these two Omniglot files in the 'data/' directory:
 matlab/data_background.mat   
 matlab/data_evaluation.mat
 
+
+
 ### Using the code
 
 **Setting your path**   
 First, you must add all of the sub-directories to your Matlab path. While in the main BPL directory type this command:
 
 ```matlab
-addpath(genpath('.'));
+addpath(genpath(pwd));
 ```
 
 **Pre-processing stroke data**   
-This only needs to be run once. From the 'data' directory, run:
+This only needs to be run once, and it can take up to 5 minutes to complete. From the 'data' directory, run:
 
 ```matlab
 omniglot_preprocess;
@@ -81,4 +87,4 @@ The parsing and one-shot classification demos include a 'fast_mode' option (on b
 
 ### Compatibility
 
-Code was developed as tested on MATLAB R2013a and Lightspeed toolbox version 2.6.
+Code was developed and tested on MATLAB R2013a and Lightspeed toolbox version 2.6.
