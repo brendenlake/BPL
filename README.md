@@ -11,9 +11,10 @@ Please cite the following paper:
 ### Pre-requisites 
 
 **Matlab Toolboxes**   
+Optimization Toolbox
 Statistics Toolbox (before R2015a) OR Statistics and Machine Learning Toolbox   
 Image Processing Toolbox   
-Curve Fitting Toolbox   
+Curve Fitting Toolbox
 
 **The Lightspeed Matlab toolbox**   
 (http://research.microsoft.com/en-us/um/people/minka/software/lightspeed/)   
